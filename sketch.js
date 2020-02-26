@@ -20,6 +20,7 @@ let cats = [{
 }];
 
 let randomIndex;
+let counter = 0;
 
 function setup() {
   createCanvas(600, 600);
@@ -28,6 +29,7 @@ function setup() {
 
   text("click to randomize", 50, 50);
 
+  setTimeout(changeBackground, 1000);
 
 }
 
