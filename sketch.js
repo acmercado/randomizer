@@ -23,7 +23,7 @@ let randomIndex;
 let counter = 0;
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(400, 400);
   background(200);
   textSize(32);
 
