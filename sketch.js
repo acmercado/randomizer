@@ -35,7 +35,6 @@ function setup() {
 
 function draw() {
   if (animating == true){
-    fill(random(255), random(255), random(255));
     ellipse(random(width), random(height), random(50, 150));
   }
 
@@ -61,8 +60,8 @@ function randomizer(){
 }
 
 function mousePressed() {
-  animating = true();
-  setTimout(randomizer, 2000);
+  animating = true;
+  setTimeout(randomizer, 2000);
 
 }
 
