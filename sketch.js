@@ -20,7 +20,7 @@ let cats = [{
 }];
 
 let randomIndex;
-let counter = 0;
+let animating = false;
 
 function setup() {
   createCanvas(400, 400);
@@ -29,42 +29,41 @@ function setup() {
 
   text("click to randomize", 50, 50);
 
-  setTimeout(changeBackground, 1000);
 
 }
 
 
 function draw() {
+  if (animating == true){
+    fill(random(255), random(255), random(255));
+    ellipse(random(width), random(height), random(50, 150));
+  }
 
 }
 
-function changeBackground(){
-  if (counter <= 5){
-    counter++;
-    console.log(counter);
-    background(random(255), random(255), random(255));
-    setTimeout(changeBackground, 1000);
-  } else {
+function randomizer(){
+  animating = false;
 
+  if (cats[0]){
+    // displays a random name and splices it out of the array
+    background(random(200, 255));
+    randomIndex = int(random(cats.length));
+    text(`${cats[randomIndex].name} is a
+      ${cats[randomIndex].color}`, 50, 50);
+    // same as above
+        // text(cats[randomIndex].name + "'s color and breed is " + cats[randomIndex].color, 50, 50);
+
+    cats.splice(randomIndex, 1);
+  } else {
+    background(random(200, 255));
+    text("nothing left!", 50, 50);
   }
 }
 
 function mousePressed() {
+  animating = true();
+  setTimout(randomizer, 2000);
 
-if (cats[0]){
-  // displays a random name and splices it out of the array
-  background(random(200, 255));
-  randomIndex = int(random(cats.length));
-  text(`${cats[randomIndex].name} is a
-    ${cats[randomIndex].color}`, 50, 50);
-  // same as above
-      // text(cats[randomIndex].name + "'s color and breed is " + cats[randomIndex].color, 50, 50);
-
-  cats.splice(randomIndex, 1);
-} else {
-  background(random(200, 255));
-  text("nothing left!", 50, 50);
-}
 }
 
 
@@ -86,3 +85,6 @@ if (cats[0]){
 
     // setInterval = every second
     // setTimeout = once (if in function, acts like interval)
+
+    // = assigning
+    // == checking
