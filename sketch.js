@@ -60,7 +60,7 @@ function setup() {
   cnv = createCanvas(800, 450);
   cnv.parent("#canvasDiv");
 
-  frameRate(10);
+  frameRate(8);
 
   background(loadImage('jpgs/flag.jpg', img => {
     image(img, 0, 0);
