@@ -5,3 +5,19 @@ html, body {
 canvas {
   display: block;
 }
+
+.daButt {
+  padding: .75vh 1vw;
+  background-color: #c3b5ff;
+  font-family: bebas;
+  font-size: 30px;
+}
+
+.row{
+  display: flex;
+}
+
+.column {
+  margin: 10px;
+  flex: 50%;
+}
