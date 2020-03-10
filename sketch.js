@@ -40,7 +40,6 @@ let animating = false;
 
 let vis = [];
 let imageCounter = 0;
-let randomVis;
 
 let fontA;
 let fontB;
@@ -101,7 +100,6 @@ function randomizer() {
     randomVis = int(random(vis.length));
 
     image(random(vis), 0, height * .1);
-    vis.splice(randomVis, 1);
 
     fill(0);
     textSize(15);
