@@ -35,6 +35,8 @@ let info = [{
   fact: "the tydings-mcduffie act of 1934 prevented filipinos from returning the states, only allowing 50 to enter the u.s. per year"
 }];
 
+// let info = [];
+
 let randomIndex;
 let animating = false;
 
@@ -44,8 +46,12 @@ let imageCounter = 0;
 let fontA;
 let fontB;
 
-let button;
+let startButton;
 let cnv;
+
+// let addButton;
+// let nameInput = [];
+// let firstTime = true;
 
 function preload() {
   fontA = loadFont('fonts/autumn.ttf');
@@ -71,9 +77,11 @@ function setup() {
     text("in the 1900s . . .", width * .35, height / 2);
   }));
 
-  button = select("#randoButt");
-  button.mousePressed(buttonPressed);
-  button.class("daButt");
+  startButton = select("#randoButt");
+  startButton.mousePressed(buttonPressed);
+
+  // addButton = select("#addButt");
+  // addButton.mousePressed(addAnotherInput);
 
 }
 
@@ -91,6 +99,11 @@ function draw() {
   }
 }
 
+// function addAnotherInput() {
+//     nameInputs.push(createInput());
+//     nameInputs[nameInputs.length - 1].parent("#inputFields");
+// }
+
 function randomizer() {
   animating = false;
 
@@ -105,6 +118,7 @@ function randomizer() {
     textSize(15);
     textFont(fontB);
     text(info[randomIndex].fact, width * .05, height * .05)
+//  text(info[randomIndex], width * .05, height * .05);
     info.splice(randomIndex, 1);
 
   } else {
@@ -114,7 +128,36 @@ function randomizer() {
 }
 
 function buttonPressed() {
+//   if (firstTime == true) {
+//     for (let i = 0; i < nameInputs.length; i++){
+//     info.push(nameInputs[i].value())
+//     }
+//     firstTime = false;
+// }
+
   animating = true;
   setTimeout(randomizer, 2000);
 
 }
+
+// NOTES:
+    // pop kicks out the item that was last
+    // push adds an item in place of what was popped out
+    // shift kicks out the item that was first
+    // unshift adds an item in place of what was shifted out
+    // splice (index, number)
+        // (2, 2) gets rid of the second, then gets rid of another (hence 2)
+        // (4, 1) gets rid of the fourth, and only the fourth
+    // how you access object properties:
+        // console.log(cats[2].color);
+    // calling a random integer:
+        // console.log(cats[int(random(5))]);
+        // random will never return the top most number, will round (decimals)
+        // cats is the array
+    // .length = length of the array
+
+    // setInterval = every second
+    // setTimeout = once (if in function, acts like interval)
+
+    // = assigning
+    // == checking
