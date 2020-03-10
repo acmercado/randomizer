@@ -115,7 +115,7 @@ function randomizer() {
     image(random(vis), 0, height * .1);
 
     fill(0);
-    textSize(15);
+    textSize(17);
     textFont(fontB);
     text(info[randomIndex].fact, width * .05, height * .05)
 //  text(info[randomIndex], width * .05, height * .05);
@@ -123,7 +123,7 @@ function randomizer() {
 
   } else {
     background(random(200, 255));
-    text("thank you for your cooperation in learning about filipinos in the u.s.", width / 2, height / 2);
+    text("thank you for your cooperation in learning about filipinos in the u.s.", width * .45, height / 2);
   }
 }
 
