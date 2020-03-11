@@ -58,7 +58,7 @@ function preload() {
   fontB = loadFont('fonts/bebas.ttf');
 
   for (let i = 0; i <= 16; i++) {
-    vis[i] = loadImage("jpgs/fact_" + i + ".jpg")
+    vis[i] = loadImage("jpgs/fact_" + i + ".jpg");
   }
 }
 
@@ -117,7 +117,7 @@ function randomizer() {
     fill(0);
     textSize(17);
     textFont(fontB);
-    text(info[randomIndex].fact, width * .05, height * .05)
+    text(info[randomIndex].fact, width * .05, height * .05);
 //  text(info[randomIndex], width * .05, height * .05);
     info.splice(randomIndex, 1);
 
